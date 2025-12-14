@@ -1,9 +1,15 @@
-from flask import Flask
+import os
+
+from dotenv import load_dotenv
+from flask import Flask, send_from_directory
 from flask_cors import CORS
 from config import Config
 
 
 def create_app(config_class=Config):
+    # Load environment variables from .env if present
+    load_dotenv()
+
     # 1. Initialize the app
     app = Flask(__name__)
 
@@ -17,9 +23,10 @@ def create_app(config_class=Config):
     from app.routes.chat import chat_bp
     app.register_blueprint(chat_bp)
 
-    # 3. Define a simple route (We will move this to Blueprints later)
+    # Serve the frontend
     @app.route('/')
     def index():
-        return "Hello from the Application Factory!"
+        static_dir = os.path.join(app.root_path, 'static')
+        return send_from_directory(static_dir, 'index.html')
 
     return app
