@@ -27,7 +27,8 @@ body {
         ),
         linear-gradient(135deg, #0b1a2a, #0c1f32 50%, #0b2a36);
     color: var(--text);
-    font-family: "Space Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif;
+    font-family: "Space Grotesk", "Segoe UI", system-ui, -apple-system,
+        sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -263,11 +264,24 @@ button:disabled {
 }
 
 /* Utilities */
-.small { font-size: 12px; }
-.card-title { font-weight: 600; margin-bottom: 6px; }
-.button-row { display: flex; gap: 8px; flex-wrap: wrap; }
-.mt-6 { margin-top: 6px; }
-.mt-8 { margin-top: 8px; }
+.small {
+    font-size: 12px;
+}
+.card-title {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.button-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.mt-6 {
+    margin-top: 6px;
+}
+.mt-8 {
+    margin-top: 8px;
+}
 
 @media (max-width: 960px) {
     main {
