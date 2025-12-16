@@ -45,6 +45,9 @@ Following Flask 3.x guidance from https://flask.palletsprojects.com/en/stable/:
 set FLASK_APP=run:app
 set FLASK_ENV=development
 flask run --host=0.0.0.0 --port=5000
+# OR
+set FLASK_APP=run.py
+flask run
 ```
 
 -   On PowerShell, use `$env:FLASK_APP="run:app"` and `$env:FLASK_ENV="development"`.
@@ -71,9 +74,3 @@ Visit http://127.0.0.1:5000 to use the frontend. It POSTs to `/api/chat`.
 
 -   `Failed to contact OpenAI`: check `OPENAI_API_KEY`, ensure network access, and confirm the model is available to your account (try `gpt-3.5-turbo`). Restart Flask after changing `.env`.
 -   Changes in `.env` require restarting the Flask server.
-
-## Next steps
-
--   Add authentication and rate limiting before production use.
--   Add logging/monitoring for upstream errors.
--   Replace the dev server with a production WSGI server (e.g., gunicorn or waitress) when deploying.
