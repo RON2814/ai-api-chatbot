@@ -137,15 +137,35 @@ form {
 .provider-row select,
 .provider-row input {
     border: 1px solid var(--border);
-    background: rgba(255, 255, 255, 0.03);
+    background-color: var(--panel);
     color: var(--text);
     border-radius: 10px;
     padding: 8px 10px;
     font-size: 13px;
+    appearance: none;
+}
+
+/* Improve visibility for options in dark mode */
+.provider-row select option {
+    background-color: var(--panel);
+    color: var(--text);
 }
 
 .provider-row input {
     width: 180px;
+}
+
+/* Placeholder text visibility in dark mode */
+.provider-row input::placeholder {
+    color: var(--muted);
+}
+
+/* Focus ring consistent with theme */
+.provider-row select:focus,
+.provider-row input:focus {
+    outline: none;
+    border-color: rgba(249, 115, 22, 0.5);
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
 }
 
 textarea {
